@@ -1,0 +1,752 @@
+// variable
+
+@import "bootstrap-compass"
+@import "bootstrap-variables"
+@import "bootstrap"
+
+$font-body-mobile: proxima-nova, "Helvetica Neue", "Helvetica", "Apple SD Gothic Neo", "Nanum Gothic", "맑은 고딕", "Arial", "돋움", "Dotum", sans-serif
+$font-body: proxima-nova, "Helvetica Neue", "Helvetica", "Apple SD Gothic Neo", "Noto Sans CJK KR", "Nanum Gothic", "맑은 고딕", "NotoSansKR webfont", "Arial", "돋움", "Dotum", sans-serif
+
+$color-white: #FFFFFF
+$color-white-hover: #22FFFF
+$color-white-active: #00DDFF
+$color-code: #000000 
+$color-code-hover: $color-code + #111111
+$color-darkgray: #757575
+$color-white-dimmed: #F5F5F5
+$color-gray: #BDBDBD
+$color-lightgray: #e5e5e5
+$color-black: #000000
+
+$max-width: 1440px
+$nav-mobile-height: 60px
+$nav-height: 80px
+$nav-z-index: 9999
+
+$content-margin-xs: 30px
+$content-margin-sm: 60px
+$content-margin-md: 90px
+$content-margin-lg: 120px
+$content-max-width: 1200px
+
+
+// @include transition(all, 0.3s, ease)
+@mixin transition($property, $duration, $timing)
+  -webkit-transition: $property $duration $timing
+  -moz-transition: $property $duration $timing
+  -ms-transition: $property $duration $timing
+  -o-transition: $property $duration $timing
+  transition: $property $duration $timing
+
+
+
+// html5 reset
+
+[hidden], area, base, basefont, command, datalist, head, input[type=hidden], link, menu[type=context], meta, noembed, noframes, param, script, source, style, track, title
+  display: none
+address, article, aside, blockquote, body, center, dd, dir, div, dl, dt, figure, figcaption, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, hr, html, legend, listing, menu, nav, ol, p, plaintext, pre, section, summary, ul, xmp
+  display: block
+table
+  display: table
+caption
+  display: table-caption
+colgroup
+  display: table-column-group
+col
+  display: table-column
+thead
+  display: table-header-group
+tbody
+  display: table-row-group
+tfoot
+  display: table-footer-group
+tr
+  display: table-row
+td, th
+  display: table-cell
+ul, ol
+  -webkit-padding-start: 0px
+  padding-start: 0
+  margin: 0
+  padding: 0
+
+li
+  display: list-item
+  list-style: none
+ruby
+  display: ruby
+rt
+  display: ruby-text
+
+*
+  -webkit-box-sizing: border-box
+  -moz-box-sizing: border-box
+  box-sizing: border-box
+
+a:hover, a:active, a:visited, a:focus
+  text-decoration: none
+
+
+
+// common style
+
+.cb
+  clear: both
+
+body
+  background: white
+  width: 100%
+  padding: 0
+  margin: 0
+  color: $color-code
+  font-family: $font-body-mobile
+  @media screen and (min-width: 768px)
+    font-family:  $font-body
+
+h1
+  margin: 0 0 0.25em
+  font-size: 6.4vw
+  font-weight: 700
+  line-height: 1.4
+  @media screen and (min-width:480px)
+    margin: 0.2em 0 0
+    font-size: 36px
+  @media screen and (min-width:1200px)
+    font-size: 54px
+
+h2
+  margin: 0 0 0.25em
+  font-size: 4.8vw
+  font-weight: 700
+  line-height: 1.4
+  @media screen and (min-width:480px)
+    font-size: 24px
+  @media screen and (min-width:1200px)
+    font-size: 32px
+
+h3
+  margin: 0 0 0.25em
+  font-size: 18px
+  font-weight: 700
+  line-height: 1.4
+  @media screen and (min-width:480px)
+    font-size: 20px
+  @media screen and (min-width:1200px)
+    font-size: 24px
+
+p
+  margin-bottom: 1em
+  font-size: 14px
+  line-height: 1.6
+  @media screen and (min-width: 480px)
+    font-size: 16px
+  @media screen and (min-width: 992px)
+    font-size: 18px
+
+img
+  display: block
+  width: 100%
+  height: auto
+
+
+
+// basic structure
+
+.container
+  position: relative
+  padding-left: $content-margin-xs
+  padding-right: $content-margin-xs
+  @media screen and (min-width: 768px)
+    width: 100%
+    padding-left: $content-margin-sm
+    padding-right: $content-margin-sm
+  @media screen and (min-width: 992px)
+    width: 100%
+    max-width: $max-width
+    padding-left: $content-margin-md
+    padding-right: $content-margin-md
+  @media screen and (min-width: 1200px)
+    padding-left: $content-margin-lg
+    padding-right: $content-margin-lg
+
+#skip_top
+  height: 0
+  width: 0
+  margin: 0
+  padding: 0
+  opacity: 0
+  position: absolute
+  top: 0
+
+.nav_link_position
+  position: relative
+  top: $nav-mobile-height * -1.4
+  margin: 0
+  padding: 0
+  width: 0
+  height: 0
+  opacity: 0  
+  @media screen and (min-width:768px)
+    top: $nav-height * -1.4
+
+.content_wrapper
+  margin-top: $nav-mobile-height
+  @media screen and (min-width:768px)
+    margin-top: $nav-height
+
+.content
+  width: 100%
+  margin-top: 24px
+  margin-bottom: 120px
+  @media screen and (min-width:480px)
+    margin-top: 36px
+  @media screen and (min-width:768px)
+    margin-top: 60px
+    margin-bottom: 180px
+  @media screen and (min-width:1200px)
+    margin-top: 90px
+  p
+    width: 100%
+    max-width: 80vw
+
+
+
+// logo
+
+.logo
+  display: inline-block
+  overflow: hidden
+  width: 2.72em
+  height: 0
+  padding-top: 1em
+  text-indent: -9999em
+  color: rgba(0,0,0,0)
+  background-repeat: no-repeat
+  background-position: center
+  background-size: 100%
+  background-image: url('../img/logo/code_logo_ui.png')
+  background-image: url('../img/logo/code_logo_ui.svg')
+  @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (-moz-min-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx)
+    background-image: url('../img/logo/code_logo_ui@2x.png')
+    background-image: url('../img/logo/code_logo_ui.svg')
+  @media only screen and (-webkit-min-device-pixel-ratio: 3), only screen and (-moz-min-device-pixel-ratio: 3), only screen and (-o-min-device-pixel-ratio: 3 / 1), only screen and (min-device-pixel-ratio: 3), only screen and (min-resolution: 288dpi), only screen and (min-resolution: 3dppx)
+    background-image: url('../img/logo/code_logo_ui@2x.png')
+    background-image: url('../img/logo/code_logo_ui.svg')
+  &.logo_white
+    background-image: url('../img/logo/code_logo_white_ui.png')
+    background-image: url('../img/logo/code_logo_white_ui.svg')
+    @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (-moz-min-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx)
+    background-image: url('../img/logo/code_logo_white_ui@2x.png')
+    background-image: url('../img/logo/code_logo_white_ui.svg')
+    @media only screen and (-webkit-min-device-pixel-ratio: 3), only screen and (-moz-min-device-pixel-ratio: 3), only screen and (-o-min-device-pixel-ratio: 3 / 1), only screen and (min-device-pixel-ratio: 3), only screen and (min-resolution: 288dpi), only screen and (min-resolution: 3dppx)
+      background-image: url('../img/logo/code_logo_white_ui@2x.png')
+      background-image: url('../img/logo/code_logo_white_ui.svg')
+
+
+
+// nav
+
+.nav_wrapper
+  max-width: $max-width
+  margin: 0 auto
+
+.nav
+  width: 100%
+  height: $nav-mobile-height
+  font-size: 16px
+  font-weight: 500
+  color: $color-white
+  background-color: $color-code
+  font-family: $font-body-mobile
+  font-weight: 500
+  line-height: 32px
+  margin: 0
+  padding: 0
+  z-index: $nav-z-index
+  position: fixed
+  top: 0
+  left: 0
+  right: 0
+  overflow: hidden
+  box-shadow: 0 0 4px rgba(0,0,0,0.1)
+  @media screen and (min-width:768px)
+    height: $nav-height
+    font-size: 18px
+  .nav_logo
+    font-size: 32px
+    padding: 14px
+    cursor: pointer
+    display: inline-block
+    margin: 0
+    @media screen and (min-width:768px)
+      font-size: 40px
+      padding: 20px 28px
+    .logo
+      display: block
+
+.gnb_menu
+  height: $nav-height
+  padding: 15px 30px
+  a
+    display: inline-block
+    padding: 16px 8px
+    height: 50px    
+    color: $color-white
+    margin-left: 12px
+    line-height: 1
+    &:hover
+      color: $color-white-hover
+    &:active
+      color: $color-white-active
+
+.mobile_gnb_menu_btn
+  width: $nav-mobile-height
+  height: $nav-mobile-height
+
+#mobile_gnb_btn
+  display: block
+  width: $nav-mobile-height
+  height: 0
+  overflow: hidden
+  text-indent: -9999em
+  margin: 0
+  padding-top: $nav-mobile-height
+  color: rgba(0,0,0,0)
+  background-size: $nav-mobile-height $nav-mobile-height
+  background-position: center
+  background-image: url('../img/gnb_btn/gnb_btn_menu.png')
+  background-image: url('../img/gnb_btn/gnb_btn_menu.svg')
+  @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (-moz-min-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx)
+  background-image: url('../img/gnb_btn/gnb_btn_menu@2x.png')
+  background-image: url('../img/gnb_btn/gnb_btn_menu.svg')
+  @media only screen and (-webkit-min-device-pixel-ratio: 3), only screen and (-moz-min-device-pixel-ratio: 3), only screen and (-o-min-device-pixel-ratio: 3 / 1), only screen and (min-device-pixel-ratio: 3), only screen and (min-resolution: 288dpi), only screen and (min-resolution: 3dppx)
+    background-image: url('../img/gnb_btn/gnb_btn_menu@2x.png')
+    background-image: url('../img/gnb_btn/gnb_btn_menu.svg')
+  &:hover
+    opacity: 0.9
+  &.active
+    background-image: url('../img/gnb_btn/gnb_btn_close.png')
+    background-image: url('../img/gnb_btn/gnb_btn_close.svg')
+    @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (-moz-min-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx)
+    background-image: url('../img/gnb_btn/gnb_btn_close@2x.png')
+    background-image: url('../img/gnb_btn/gnb_btn_close.svg')
+    @media only screen and (-webkit-min-device-pixel-ratio: 3), only screen and (-moz-min-device-pixel-ratio: 3), only screen and (-o-min-device-pixel-ratio: 3 / 1), only screen and (min-device-pixel-ratio: 3), only screen and (min-resolution: 288dpi), only screen and (min-resolution: 3dppx)
+      background-image: url('../img/gnb_btn/gnb_btn_close@2x.png')
+      background-image: url('../img/gnb_btn/gnb_btn_close.svg')
+
+#mobile_gnb_menu
+  position: fixed
+  top: $nav-mobile-height
+  left: 0
+  right: 0
+  bottom: 0
+  z-index: $nav-z-index
+  .menu_list
+    position: fixed
+    top: $nav-mobile-height
+    left: 0
+    right: 0
+    height: auto
+    background-color: $color-code
+    color: $color-white
+    padding: 20px 0 30px
+    z-index: $nav-z-index
+    a
+      display: block
+      padding: 12px 30px
+      font-size: 24px
+      color: $color-white
+      &:hover
+        color: $color-white-hover
+      &:active
+        color: $color-white-active
+
+.mobile_gnb_menu_dimmed_bg
+  position: fixed
+  top: $nav-mobile-height
+  left: 0
+  right: 0
+  bottom: 0
+  z-index: $nav-z-index - 1
+  background-color: rgba(0,0,0,0.15)
+  overflow: hidden
+  opacity: 1
+
+
+
+// cover
+
+.cover
+  width: 100%
+  height: auto
+  overflow: hidden
+  background-color: $color-code
+  color: $color-white
+
+.cover_logo_wrapper
+  position: relative
+  display: block
+  overflow: hidden
+  margin: auto
+  width: 100%
+  max-width: 640px
+  height: 50.13333333vw
+  max-height: 320px
+  @media screen and (min-width:768px)
+    max-width: 720px
+    max-height: 360px
+  @media screen and (min-width:1200px)
+    max-width: 960px
+    max-height: 480px
+  .cover_logo
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    width: inherit
+    max-width: inherit
+    height: inherit
+    max-height: inherit
+    background-repeat: no-repeat
+    background-position: center
+    background-size: 100%
+    background-image: url('../img/cover/code_cover_mask.png')
+    background-image: url('../img/cover/code_cover_mask.svg')
+    @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (-moz-min-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx)
+      background-image: url('../img/cover/code_cover_mask@2x.png')
+      background-image: url('../img/cover/code_cover_mask.svg')
+    @media only screen and (-webkit-min-device-pixel-ratio: 3), only screen and (-moz-min-device-pixel-ratio: 3), only screen and (-o-min-device-pixel-ratio: 3 / 1), only screen and (min-device-pixel-ratio: 3), only screen and (min-resolution: 288dpi), only screen and (min-resolution: 3dppx)
+      background-image: url('../img/cover/code_cover_mask@2x.png')
+      background-image: url('../img/cover/code_cover_mask.svg')
+  &:before
+    content: ""
+    position: absolute
+    display: block
+    top: 25.625%
+    left: 31.35416667%
+    width: 20%
+    height: 40%
+    background-color: white
+    background-repeat: no-repeat
+    background-position: center
+    background-size: 100%
+    background-image: url('../img/cover/o_color_ani.gif')
+
+.cover_headline
+  width: 100%
+  max-width: $max-width
+  margin: 0 auto
+  padding: 2.13333333vw $content-margin-xs 6.4vw
+  @media screen and (min-width:480px)
+    padding-top: 12px
+    padding-bottom: 36px
+  @media screen and (min-width:768px)
+    padding: 16px $content-margin-sm 40px
+  @media screen and (min-width:992px)
+    padding: 18px $content-margin-md 60px
+  @media screen and (min-width:1200px)
+    padding: 20px $content-margin-lg 90px
+
+
+
+// section
+
+// section common
+
+.rounded_gray_box
+  margin: 8px 0
+  padding: 20px
+  background-color: $color-white-dimmed
+  border-radius: 16px
+  @media screen and (min-width:768px)
+    margin: 16px 0
+    padding: 40px
+    border-radius: 30px
+  @media screen and (min-width:992px)
+    margin: 32px 0
+  @media screen and (min-width:1200px)
+    margin: 40px 0
+
+.bold_bar_black
+  margin: 30px 0
+  width: 100%
+  border-top: 3px solid $color-code
+  @media screen and (min-width:768px)
+    margin: 60px 0
+    border-top: 5px solid $color-code
+  @media screen and (min-width:1200px)
+    margin: 90px 0
+
+.heading
+  margin-top: 0
+  margin-bottom: 16px
+  color: $color-code
+  line-height: 1.3
+  font-size: 24px
+  font-weight: 700  
+  @media screen and (min-width:480px)  
+    font-size: 32px
+  @media screen and (min-width:768px)
+    font-size: 36px
+  @media screen and (min-width:960px)
+    font-size: 48px
+  @media screen and (min-width:1200px)
+    font-size: 54px
+  a
+    color: inherit !important
+  a:hover
+    color: $color-code + #111111 
+
+.caption
+  font-size: 12px
+  color: $color-darkgray
+  @media screen and (min-width:480px)
+    font-size: 14px
+  @media screen and (min-width:768px)
+    font-size: 12px
+  @media screen and (min-width:992px)
+    font-size: 14px
+  @media screen and (min-width:1200px)
+    font-size: 16px
+
+.flexslider
+  img
+    border: 1px solid $color-lightgray
+    border-radius: 16px
+    box-shadow: 0px 8px 40px rgba(0, 0, 0, 0.05)
+    @media screen and (min-width:768px)
+      border-radius: 30px
+
+// flexslider.css override
+.flex-control-paging li a.flex-active
+  color: $color-code
+  background-color: $color-code
+
+.flex-control-paging li a:hover
+  background-color: $color-code-hover
+
+.flex-control-nav
+  bottom: -40px
+  @media screen and (min-width:768px)
+    bottom: -60px
+// end of flexslider.css override
+
+.flexslider_caption
+  text-align: center
+  color: $color-gray
+  margin-top: 60px
+  @media screen and (min-width:768px)
+    margin-top: 90px
+
+
+// section: code
+
+.partner_logo
+  display: block
+  margin: 0 auto
+  width: 100%
+  max-width: 180px
+  height: auto
+  @media screen and (min-width:480px)
+    max-width: 240px
+  @media screen and (min-width:768px)
+    max-width: 280px
+  @media screen and (min-width:992px)
+    max-width: 320px
+  @media screen and (min-width:1200px)
+    max-width: 380px
+
+.narrow_bar_gray
+  margin: 20px auto
+  width: 180px
+  border-top: 3px solid $color-lightgray
+  @media screen and (min-width:480px)
+    margin-top: 30px
+    margin-bottom: 30px
+  @media screen and (min-width:768px)
+    margin-top: 10px
+    margin-bottom: 10px
+
+
+// section: r3corda
+
+.r3corda_section .r3corda_logo
+  width: 180px
+  margin: -5px auto 10px
+  @media screen and (min-width:480px)
+    width: 240px
+  @media screen and (min-width:768px)
+    margin: -15px 0 15px
+  @media screen and (min-width:992px)
+    width: 280px
+  @media screen and (min-width:1200px)
+    width: 320px
+  
+.r3corda_list
+  li
+    margin-left: 1em
+    margin-bottom: 0.4em
+    list-style: disc
+    font-size: 14px
+    line-height: 1.5
+    @media screen and (min-width:480px)
+      margin-left: 1.6em
+      font-size: 16px
+    @media screen and (min-width:768px)
+      margin-left: 1em
+    @media screen and (min-width:992px)
+      margin-left: 1.6em
+      font-size: 18px
+    @media screen and (min-width:1200px)
+      font-size: 20px
+
+.r3corda_structure
+  margin: 10px auto 15px
+  max-width: 180px
+  @media screen and (min-width:480px)
+    margin-top: 15px
+    max-width: 240px
+  @media screen and (min-width:768px)
+    margin: 0 auto 20px
+    max-width: 280px
+
+$feature-tag-width-xs: 74px
+$feature-tag-height-xs: 36px
+$feature-tag-fontsize-xs: 16px
+$feature-tag-width-md: 120px
+$feature-tag-height-md: 56px
+$feature-tag-fontsize-md: 20px
+$feature-tag-width-lg: 140px
+$feature-tag-height-lg: 64px
+$feature-tag-fontsize-lg: 26px
+
+.feature_list
+  margin: 30px 0 40px
+  @media screen and (min-width:480px)
+    margin-left: 10px
+    margin-bottom: 60px
+  @media screen and (min-width:768px)
+    margin-top: 60px
+    margin-left: 20px
+    margin-bottom: 80px
+  @media screen and (min-width:992px)
+    margin-left: 30px
+  @media screen and (min-width:1200px)
+    margin-top: 80px
+    margin-left: 40px
+    margin-bottom: 120px
+  li
+    position: relative
+    margin-bottom: 16px
+    padding-left: $feature-tag-width-xs + 12px
+    font-size: 14px
+    line-height: 1.5
+    @media screen and (min-width:480px)
+      font-size: 16px
+      margin-bottom: 24px
+    @media screen and (min-width:768px)
+      font-size: 18px
+      margin-bottom: 50px
+      padding-left: $feature-tag-width-md + 24px
+    @media screen and (min-width:992px)
+      font-size: 20px
+    @media screen and (min-width:1200px)
+      padding-left: $feature-tag-width-lg + 24px
+      font-size: 24px
+    p
+      font-size: inherit
+
+.feature_tag
+  position: absolute
+  display: inline-block
+  top: -4px
+  left: 0
+  padding: ( $feature-tag-height-xs - $feature-tag-fontsize-xs ) * 0.5
+  width: $feature-tag-width-xs
+  height: $feature-tag-height-xs
+  color: $color-white
+  background: $color-code
+  border-radius: $feature-tag-height-xs * 0.5
+  font-size: $feature-tag-fontsize-xs
+  font-weight: 700
+  line-height: 1  
+  text-align: center
+  @media screen and (min-width:480px)
+    top: -6px
+  @media screen and (min-width:768px)
+    top: -12px
+    padding: ( $feature-tag-height-md - $feature-tag-fontsize-md ) * 0.5
+    width: $feature-tag-width-md
+    height: $feature-tag-height-md
+    border-radius: $feature-tag-height-md * 0.5
+    font-size: $feature-tag-fontsize-md
+  @media screen and (min-width:1200px)
+    top: -18px
+    padding: ( $feature-tag-height-lg - $feature-tag-fontsize-lg ) * 0.5
+    width: $feature-tag-width-lg
+    height: $feature-tag-height-lg
+    border-radius: $feature-tag-height-lg * 0.5
+    font-size: $feature-tag-fontsize-lg
+
+
+// section: structure
+.rounded_gray_box.code_structure_box
+  // rounded_gray_box remove padding
+  padding: 0px
+  @media screen and (min-width:768px)
+    padding: 0px
+
+
+// section: contact
+.code_email
+  color: $color-code
+  border-bottom: 2px solid $color-code
+
+
+
+// footer
+$footer-text-opacity: 0.2
+
+.footer
+  padding-top: 24px
+  padding-bottom: 40px
+  background-color: $color-white-dimmed
+  @media screen and (min-width:768px)
+    padding-top: 60px
+    padding-bottom: 90px
+  
+.footer_logo
+  margin-left: -0.1em
+  font-size: 42px
+  opacity: $footer-text-opacity
+  @media screen and (min-width:768px)
+    font-size: 66px
+
+.footer_tagline
+  margin-top: 0.25em
+  margin-bottom: 0.2em
+  color: $color-code
+  opacity: $footer-text-opacity
+  font-weight: 700
+  font-size: 16px
+  @media screen and (min-width:768px)
+    font-size: 24px
+
+.copyright
+  font-size: 12px
+  color: $color-code
+  opacity: $footer-text-opacity
+  @media screen and (min-width:768px)
+    font-size: 16px  
+
+
+
+// typography style
+
+.mobile_line_break
+  @media screen and (min-width: 768px)
+    display: none !important
+
+.center
+  text-align: center !important
