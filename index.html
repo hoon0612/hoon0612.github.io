@@ -1,30 +1,122 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title> 차명훈 & 최자은의 결혼식 </title>
+<head>
+	<title> 차명훈 & 최자은 결혼식 </title>
 
-	    <meta charset="UTF-8">
-	    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-	    <!-- Open Graph protocol -->
-	    <meta property="og:title" content="차명훈 & 최자은의 결혼식">
-	    <meta property="og:description" content="결혼합니다">
-	    <meta property="og:image" content="https://chaandchoi.com/img/og_image.png">
-	    <meta property="og:url" content="https://chaandchoi.com">
-	    <meta property="og:site_name" content="차명훈 & 최자은의 결혼식">
-	    <meta property="og:type" content="website">
+	<!-- Open Graph protocol -->
+	<meta property="og:title" content="차명훈 & 최자은 결혼식">
+	<meta property="og:description" content="2022. 05. 15. 일요일, 스테이지28 메모리가든">
+	<meta property="og:image" content="https://chaandchoi.com/img/og_image.png">
+	<meta property="og:url" content="https://chaandchoi.com">
+	<meta property="og:site_name" content="차명훈 & 최자은 결혼식">
+	<meta property="og:type" content="website">
 
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-		<link rel="stylesheet" type="text/css" href="https://use.typekit.net/mss7pdt.css">
-		<link rel="stylesheet" type="text/css" href="css/styles.css" >
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
-	</head>
-	<body>
-		<h1> 차명훈 & 최자은 </h1>
-		<p> 결혼합니다 </p>
-		<div>
-			<span id="date"> 일시 : 2025. 5. 15 </span>
-			<span id="place"> 장소 : Stage 28 </span>
+	<!-- favicon - https://www.favicon-generator.org/ -->
+	<link rel="shortcut icon" href="img/icon/favicon.ico" type="image/x-icon">
+	<link rel="icon" href="img/icon/favicon.ico" type="image/x-icon">
+	<link rel="apple-touch-icon" sizes="57x57" href="img/icon/apple-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="img/icon/apple-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="img/icon/apple-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="img/icon/apple-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="img/icon/apple-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="img/icon/apple-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="img/icon/apple-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="img/icon/apple-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="img/icon/apple-icon-180x180.png">
+	<link rel="icon" type="image/png" sizes="192x192"  href="img/icon/android-icon-192x192.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="img/icon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="img/icon/favicon-96x96.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="img/icon/favicon-16x16.png">
+	<link rel="manifest" href="img/icon/manifest.json">
+	<meta name="msapplication-TileColor" content="#1c2237">
+	<meta name="msapplication-TileImage" content="img/icon/ms-icon-144x144.png">
+	<meta name="theme-color" content="#1c2237">
+
+	<!-- script -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script type="text/javascript">
+		// Smooth Scrolling
+		$(function() {
+			$('a[href*=#]:not([href=#])').click(function() {
+				if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+					var target = $(this.hash);
+					target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+					if (target.length) {
+						$('html,body').animate({
+							scrollTop: target.offset().top
+						}, 1000);
+						return false;
+					}
+				}
+			});
+		});
+
+		// mobile menu
+		$(function() {
+			$("#mobile_gnb_btn").click(function() {
+				if ($(this).hasClass("active")) {
+					($(this).removeClass("active"));
+					($("#mobile_gnb_menu").addClass("hidden"));
+				} else {
+					($(this).addClass("active"));
+					($("#mobile_gnb_menu").removeClass("hidden"));
+				}
+			});
+			$(".fn_mobile_gnb_menu_close").click(function() {
+				($("#mobile_gnb_btn").removeClass("active"));
+				($("#mobile_gnb_menu").addClass("hidden"));
+			});
+		});
+	</script>
+
+	<!-- FlaxSlider (Index) -->
+	<link rel="stylesheet" type="text/css" href="static/css/flexslider.css">
+	<script type="text/javascript" src="static/js/jquery.flexslider-min.js"></script>
+	<script type="text/javascript" charset="utf-8">
+		$(window).load(function() {
+			$('.flexslider').flexslider({
+				slideshow: false
+			});
+		});
+	</script>
+
+	<!-- style -->
+	<link rel="stylesheet" type="text/css" href="css/styles.css" >
+
+</head>
+<body>
+	<div class="content_wrapper">
+		<div class="container">
+			<div class="content">
+				<h2 class="hr_title"> INVITATION </h2>
+				<hr>
+				<h1 class="main_title"> 
+					차명훈 & 최자은
+					<br>
+					결혼합니다
+				</h1>
+				
+				<ul class="main_list_ul">
+					<li id="date"> 2022년 5월 15일 일요일 오후 5시 30분</li>
+					<li id="place">
+						스테이지28 메모리가든
+						<br>
+						<a class="li_sub_link" href="http://naver.me/G6iUomVJ" target="_blank"> 서울 강동구 아리수로61길 105 </a>
+					</li>
+				</ul>
+				<div class="info_box">
+					<h3 class="info_box_title">✱ 드레스코드 — <span class="color_ani_text"><i>Suits & Dresses</i></span> &#x1F57A;</h3>
+					<img src="img/stage28.png" alt="스테이지28 결혼식장">
+					<span class="caption">사진출처: 스테이지28</span>
+				</div>
+				<p class="copyright">&copy; CHA & CHOI. Copyright and all rights reserved.</p>
+			</div>
 		</div>
-	</body>
+	</div>
+</body>
 </html>

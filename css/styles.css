@@ -1,0 +1,375 @@
+/*
+html5doctor.com Reset Stylesheet
+v1.6.1
+Last Updated: 2010-09-17
+Author: Richard Clark - http://richclarkdesign.com
+Twitter: @rich_clark
+*/
+
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+    margin:0;
+    padding:0;
+    border:0;
+    outline:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+
+body {
+    line-height:1;
+}
+
+article,aside,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section {
+    display:block;
+}
+
+nav ul {
+    list-style:none;
+}
+
+blockquote, q {
+    quotes:none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content:'';
+    content:none;
+}
+
+a {
+    margin:0;
+    padding:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+
+/* change colours to suit your needs */
+ins {
+    background-color:#ff9;
+    color:#000;
+    text-decoration:none;
+}
+
+/* change colours to suit your needs */
+mark {
+    background-color:#ff9;
+    color:#000;
+    font-style:italic;
+    font-weight:bold;
+}
+
+del {
+    text-decoration: line-through;
+}
+
+abbr[title], dfn[title] {
+    border-bottom:1px dotted;
+    cursor:help;
+}
+
+table {
+    border-collapse:collapse;
+    border-spacing:0;
+}
+
+/* change border colour to suit your needs */
+hr {
+    display:block;
+    height:1px;
+    border:0;  
+    border-top:1px solid #cccccc;
+    margin:1em 0;
+    padding:0;
+}
+
+input, select {
+    vertical-align:middle;
+}
+
+
+/* common style */
+
+.cb {
+  clear: both
+}
+
+* {
+  box-sizing: border-box;
+}
+
+@charset "UTF-8";
+body {
+  background: #1c2237;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  color: #CAB07C;
+  font-family: "Helvetica Neue", "Helvetica", "Apple SD Gothic Neo", "Nanum Gothic", "맑은 고딕", "Arial", "돋움", "Dotum", sans-serif; 
+}
+@media screen and (min-width: 768px) {
+  body {
+    font-family: "Helvetica Neue", "Helvetica", "Apple SD Gothic Neo", "Nanum Gothic", "맑은 고딕", "Arial", "돋움", "Dotum", sans-serif; 
+  } 
+}
+
+h1 {
+  margin: 0 0 0.25em;
+  font-size: 10vw;
+  font-weight: 700;
+  line-height: 1.4; 
+}
+@media screen and (min-width: 414px) {
+  h1 {
+    font-size: 9vw; 
+  } 
+}
+@media screen and (min-width: 480px) {
+  h1 {
+    margin: 0.2em 0 0;
+    font-size: 48px;
+  }
+}
+@media screen and (min-width: 992px) {
+  h1 {
+    font-size: 64px;
+  }
+}
+
+h2 {
+  margin: 0 0 0.25em;
+  font-size: 4.8vw;
+  font-weight: 700;
+  line-height: 1.4;
+}
+@media screen and (min-width: 480px) {
+  h2 {
+    font-size: 24px;
+  }
+}
+@media screen and (min-width: 992px) {
+  h2 {
+    font-size: 32px;
+  }
+}
+
+h3 {
+  margin: 0 0 0.25em;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+@media screen and (min-width: 480px) {
+  h3 {
+    font-size: 20px;
+  }
+}
+@media screen and (min-width: 992px) {
+  h3 {
+    font-size: 24px;
+  }
+}
+
+p {
+  margin-bottom: 1em;
+  font-size: 14px;
+  line-height: 1.6;
+}
+@media screen and (min-width: 480px) {
+  p {
+    font-size: 16px;
+  }
+}
+@media screen and (min-width: 992px) {
+  p {
+      font-size: 18px;
+  }
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+hr {
+  border-top: 3px solid #CAB07C;
+}
+
+/* basic structure */
+.container {
+  position: relative;
+  margin: auto;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+@media screen and (min-width: 768px) {
+  .container {
+    width: 100%;
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+}
+@media screen and (min-width: 992px) {
+  .container {
+    width: 100%;
+    max-width: 1000px;
+    padding-left: 90px;
+    padding-right: 90px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .container {
+    padding-left: 120px;
+    padding-right: 120px;
+  }
+}
+
+.content_wrapper {
+  margin-top: 60px;
+}
+@media screen and (min-width: 768px) {
+  .content_wrapper {
+    margin-top: 80px;
+  }
+}
+
+.content {
+  width: 100%;
+  margin-top: 24px;
+  margin-bottom: 120px;
+}
+@media screen and (min-width: 480px) {
+  .content {
+    margin-top: 36px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .content {
+    margin-top: 60px;
+    margin-bottom: 180px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .content {
+    margin-top: 90px;
+  }
+}
+
+.content p {
+  width: 100%;
+  max-width: 80vw;
+}
+
+
+/* typography */
+.hr_title {
+  font-weight: bold;
+  letter-spacing: 0.1em;
+}
+
+.main_title {
+  margin-top: 0.5em;
+  margin-bottom: 1em;
+}
+
+.main_list_ul li {
+  list-style: none;
+  font-size: 5vw;
+  line-height: 1.4;
+  margin-bottom: 0.5em;
+}
+@media screen and (min-width: 480px) {
+  .main_list_ul li {
+    font-size: 24px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .main_list_ul li {
+    font-size: 32px;
+  }
+}
+
+.li_sub_link {
+  display: inline-block;
+  padding: 0.3em 0;
+  font-size: 0.6em;
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid #CAB07C;
+  opacity: 0.8;
+}
+
+.info_box {
+  position: relative;
+  width: 100%;
+  max-width: 540px;
+  margin: 4em 0 2em;
+  border: 1px solid #333b52;
+  background: #283045;
+  border-radius: 16px;
+}
+
+.info_box_title {
+  padding: 0.6em 0.7em 0.4em;
+  font-weight: normal;
+  font-size: 15px; }
+@media screen and (min-width: 375px) {
+  .info_box_title {
+    font-size: 16px;
+  }
+}
+@media screen and (min-width: 414px) {
+  .info_box_title {
+    font-size: 18px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .info_box_title {
+    font-size: 20px;
+  }
+}
+
+.color_ani_text {
+  animation: color-change 7s infinite;
+}
+
+@keyframes color-change {
+  0% { color: #CAB07C; }
+  33% { color: #b592b8; }
+  66% { color: #e7b7b7; }
+  80% { color: #e7e0b7; }
+  100% { color: #CAB07C; }
+}
+
+.info_box img {
+  border-radius: 0 0 16px 16px;
+}
+
+.info_box .caption {
+  position: absolute;
+  bottom: 1em;
+  right: 1.2em;
+  color: #e7e0b7;
+  opacity: 0.7;
+  font-size: 80%;
+}
+
+.copyright {
+  font-size: 80%;
+  opacity: 0.8;
+}
